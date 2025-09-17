@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show/Hide Divs</title>
+    <style>
+      .box {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="box" id="box1">
+        <p>Box 1</p>
+      </div>
+
+      <div class="box" id="box2">
+        <p>Box 2</p>
+      </div>
+
+      <div class="box" id="box3">
+        <p>Box 3</p>
+      </div>
+
+      <div class="box" id="box4">
+        <p>Box 4</p>
+      </div>
+    </section>
+    <button onclick="showBox('box1')">Box 1</button>
+    <button onclick="showBox('box2')">Box 2</button>
+    <button onclick="showBox('box3')">Box 3</button>
+    <button onclick="showBox('box4')">Box 4</button>
+
+    <script>
+      let boxes = {};
+      function showBox(id) {
+        let boxRefSel = document.getElementById(id);
+        let boxRefAll = document.getElementsByClassName("box");
+
+        // for(let box of boxRefAll){
+        //     box.style.display = "none";
+        // }
+        // boxRefSel.style.display = 'inline-block';
+
+        if (boxes[id] == "none") {
+          boxes[id] = "inline-block";
+          boxRefSel.style.display = "inline-block";
+        } else {
+          boxes[id] = "none";
+          boxRefSel.style.display = "none";
+        }
+        // console.log(boxes);
+      }
+    </script>
+  </body>
+</html>
