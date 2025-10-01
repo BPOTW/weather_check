@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h2>Check Weather</h2>
-  
-  <input type="text" id="cityInput" placeholder="Enter city name">
-  <button onclick="showWeather()">Get Weather</button>
-  
-  <p id="result"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Weather Check</h2>
+      <input id="city" type="text" placeholder="Enter city name" />
+      <button onclick="checkWether()">Check</button>
+      <div id="result"></div>
+    </div>
 
-  <script>
-    function showWeather() {
-      let city = document.getElementById("cityInput").value.toLowerCase();
-      let result = document.getElementById("result");
-
-      // hardcoded data
-      if (city === "lahore") {
-        result.innerText = "Weather in Lahore: 32°C, Sunny";
-      } else if (city === "karachi") {
-        result.innerText = "Weather in Karachi: 30°C, Humid";
-      } else if (city === "islamabad") {
-        result.innerText = "Weather in Islamabad: 28°C, Cloudy";
-      } else {
-        result.innerText = "Weather data not available for " + city;
-      }
-    }
-  </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
